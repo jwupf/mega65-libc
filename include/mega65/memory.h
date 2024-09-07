@@ -22,6 +22,11 @@
 #define DMA_XYMOD_ADDR                                                         \
     0x03; //!< DMA XY MOD (bitmap rectangular) addressing mode (unimplemented)
 
+#ifdef __cplusplus
+// Being compiled by a C++ compiler, inhibit name mangling
+extern "C" {
+#endif
+
 /**
  * @brief DMA list structure
  */
@@ -174,6 +179,10 @@ void lfill_skip(
 #ifdef __clang__
 /// Peek eight bytes from the given address
 #define PEEK64(X) (*(volatile uint64_t*)(X))
+#endif
+
+#ifdef __cplusplus
+} // End of extern "C"
 #endif
 
 #endif // __MEGA65_MEMORY_H

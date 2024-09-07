@@ -12,6 +12,11 @@
 #include <stdint.h>
 #include <stddef.h>
 
+#ifdef __cplusplus
+// Being compiled by a C++ compiler, inhibit name mangling
+extern "C" {
+#endif
+
 #ifdef __clang__
 __attribute__((leaf))
 #endif
@@ -99,5 +104,9 @@ struct hyppo_version {
 __attribute__((leaf))
 #endif
 void gethyppoversion(struct hyppo_version* version);
+
+#ifdef __cplusplus
+} // End of extern "C"
+#endif
 
 #endif // __MEGA65_FILEIO_H

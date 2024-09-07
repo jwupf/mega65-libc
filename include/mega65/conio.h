@@ -186,6 +186,11 @@
 #define CINPUT_NO_AUTOTRANSLATE 8
 #define CINPUT_ACCEPT_ALPHA CINPUT_ACCEPT_NUMERIC | CINPUT_ACCEPT_LETTER
 
+#ifdef __cplusplus
+// Being compiled by a C++ compiler, inhibit name mangling
+extern "C" {
+#endif
+
 /*------------------------------------------------------------------------
   Public structs
   -----------------------------------------------------------------------*/
@@ -1196,5 +1201,9 @@ void flushkeybuf(void);
  */
 unsigned char cinput(
     unsigned char* buffer, unsigned char buflen, unsigned char flags);
+
+#ifdef __cplusplus
+} // End of extern "C"
+#endif
 
 #endif /* __MEGA65_CONIO_H */
