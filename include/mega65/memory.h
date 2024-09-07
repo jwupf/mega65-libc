@@ -70,14 +70,16 @@ void mega65_io_enable(void);
 #ifdef __clang__
 __attribute__((leaf))
 #endif
-uint8_t lpeek(uint32_t address);
+uint8_t
+lpeek(uint32_t address);
 
 #ifdef __llvm__
 /**
  * @brief Inlined version of `lpeek()`
  * @param ADDRESS 28-bit address; must be a compile-time constant.
  * @returns Value at address
- * @warning This function is experimental and may change/be removed in future versions
+ * @warning This function is experimental and may change/be removed in future
+ * versions
  */
 inline uint8_t lpeek_i(const uint32_t ADDRESS)
 {

@@ -923,10 +923,10 @@ void fastcall cputnc(unsigned char count, unsigned char c);
 void cputhex(unsigned long n, unsigned char prec);
 
 /* \m65libsummary{cputdec}{Output a decimal number at current position}
-    \m65libsyntax    {void cputdec(unsigned long n, unsigned char padding, unsigned char
-   leadingZ)} \m65libparam     {n}{The number to write} \m65libparam
-   {padding}{The padding space to add before number} \m65libparam {leadingZ}{The
-   leading zeros to print}
+    \m65libsyntax    {void cputdec(unsigned long n, unsigned char padding,
+   unsigned char leadingZ)} \m65libparam     {n}{The number to write}
+   \m65libparam {padding}{The padding space to add before number} \m65libparam
+   {leadingZ}{The leading zeros to print}
 */
 /**
  * @brief Output a decimal number at current position
